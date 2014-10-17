@@ -20,4 +20,7 @@ getFullPathFileName <-function(pFileName)
 
 
 ##This function loads the desired dataset (NEI or SCC)
-get
+#get
+
+#summary <-file(getFullPathFileName('summarySCC_PM25'))
+# NEI <- readRDS(getFullPathFileName('summarySCC_PM25'))
