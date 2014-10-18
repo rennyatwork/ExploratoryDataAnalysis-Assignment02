@@ -9,6 +9,17 @@ getFullPathFileName <-function(pFileName)
   return (paste(paste(getwd(),paste("exdata_data_NEI_data", pFileName, sep="/"), sep="/"), ".rds" , sep=""))
 }
 
+## Gets the NEI Dt
+getDt <- function()
+{
+  return (readRDS(getFullPathFileName('summarySCC_PM25')))
+  #transform(NEI, year = factor(year)
+}
+
+sumPerYear <-function()
+{
+  
+}
 
 ## From http://stackoverflow.com/questions/14923581/open-files-saved-with-rs-saverds-serialization-interface-with-stata
 #resave <- function(infile)
@@ -24,3 +35,6 @@ getFullPathFileName <-function(pFileName)
 
 #summary <-file(getFullPathFileName('summarySCC_PM25'))
 # NEI <- readRDS(getFullPathFileName('summarySCC_PM25'))
+#dt2 <-  sqldf("select sum(Emissions), year from NEI group by year")
+#plot(data.frame(dt2[2], dt2[1]))
+# plot(data.frame(dt2[2], dt2[1]/1000.00), type='l', xlab='year', ylab=' Emissions (x 1000)', main='Total Emissions (x 1000) per year')
