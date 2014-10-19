@@ -1,3 +1,4 @@
+#Initiualize libraries and import plot1.R
 initialize<-function()
 {
   source("plot1.R")
@@ -30,6 +31,8 @@ joinTables <- function()
   {
   
   #join and get only data fro Baltimore
+  # combustion from coal source is assumed to contain
+    #the words"comb" and "coal"
   dtJoin <<- sqldf("SELECT 
                   dts.* 
                   , dtc.EI_Sector
