@@ -6,16 +6,7 @@ initialize<-function()
   library(sqldf)
 }
 
-##this corresponds to the second file
-#getDtSourceClassif <- function()
-#{ 
-#  if(!exists("dtSourceClassif"))
-#  {
-#    dtSourceClassif <<- readRDS(getFullPathFileName('summarySCC_PM25'))
-#  }
-#  return (dtSourceClassif);
-#  #transform(NEI, year = factor(year)
-#}
+
 
 
 ## Gets the data for Baltimore: Sum(Emission), Year, Type
