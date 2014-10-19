@@ -1,3 +1,9 @@
+## Question1:
+## Have total emissions from PM2.5 decreased in the United States 
+##from 1999 to 2008? Using the base plotting system, make a plot showing
+##the total PM2.5 emission from all sources for each of the years 
+##1999, 2002, 2005, and 2008.
+
 ##initialize to use library sqldf
 initialize <-function ()
 {
@@ -12,15 +18,19 @@ getFullPathFileName <-function(pFileName)
 
 ## Gets the NEI Dt
 getDt <- function()
-{
-  return (readRDS(getFullPathFileName('summarySCC_PM25')))
+{ 
+  if(!exists("lixo"))
+  {
+    lixo <<- readRDS(getFullPathFileName('summarySCC_PM25'))
+  }
+  return (lixo);
   #transform(NEI, year = factor(year)
 }
 
 ## saves and close the file
-saveAndClose <- function(pName)
+saveAndClose <- function(pName, pWidth=480, pHeight=480)
 {
-  dev.copy(png, paste(pName, ".png", sep=""), width=480, height=480)
+  dev.copy(png, paste(pName, ".png", sep=""), width=pWidth, height=pHeight)
   dev.off()
 }
 
