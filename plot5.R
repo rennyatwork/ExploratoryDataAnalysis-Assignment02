@@ -6,7 +6,11 @@ initialize<-function()
   library(ggplot2)
   library(sqldf)
   #cleans dtJoin not to use the one from previous plot
-  rm(dtJoin)
+  if(exists("dtJoin"))
+  {
+    rm(dtJoin)
+  }
+  
 }
 
 #join data from the 2 files
@@ -30,7 +34,7 @@ joinTables5 <- function()
                      FROM  dtSummary dtS 
                      INNER JOIN dtSourceClassif dtC
                      on dtS.SCC = dtC.SCC
-                     WHERE dtC.EI_Sector like '%Mobile'
+                     WHERE dtC.EI_Sector like '%Mobile%'
                      AND dts.fips ='24510' ")
   }
   
