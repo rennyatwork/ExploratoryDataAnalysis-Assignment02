@@ -63,6 +63,9 @@ getPlotDt5 <- function()
 ##Plots graph 5: Emissions in Baltimore from motor sources
 plot5 <-function()
 {
+  #gets the datatable ready to plot
   dtPlot <- getPlotDt5()
+  
+  #plots the graph
   qplot(year, Emissions/1000, data=dtPlot, ylab='Total Emissions (x1000)', geom='line', main='Total Emissions from Motor Source in Baltimore')
 }
