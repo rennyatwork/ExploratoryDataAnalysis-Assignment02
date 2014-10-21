@@ -67,5 +67,5 @@ plot5 <-function()
   dtPlot <- getPlotDt5()
   
   #plots the graph
-  qplot(year, Emissions/1000, data=dtPlot, ylab='Total Emissions (x1000)', geom='line', main='Total Emissions from Motor Source in Baltimore')
+  qplot(year, Emissions, data=dtPlot, ylab='Total Emissions ', geom='line', main='Total Emissions from Motor Source in Baltimore')
 }
